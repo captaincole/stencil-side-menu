@@ -1,5 +1,5 @@
 exports.config = {
-  namespace: 'mycomponent',
+  namespace: 'side-menu',
   generateDistribution: true
 };
 

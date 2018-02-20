@@ -1,0 +1,12 @@
+{
+  "namespace": "SideMenu",
+  "fsNamespace": "side-menu",
+  "loader": "../side-menu.js",
+  "core": "side-menu.core.js",
+  "corePolyfilled": "es5-build-disabled.js",
+  "components": {
+    "side-menu": {
+      "$": "side-menu"
+    }
+  }
+}

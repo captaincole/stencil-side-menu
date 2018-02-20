@@ -5,33 +5,43 @@
  */
 
 
+declare global {
+  interface HTMLStencilElement extends HTMLElement {
+    componentOnReady(): Promise<this>;
+    componentOnReady(done: (ele?: this) => void): void;
+  }
+}
+
+
+
 import {
-  MyComponent as MyComponent
-} from './components/my-component/my-component';
+  SideMenu as SideMenu
+} from './components/side-menu/side-menu';
 
 declare global {
-  interface HTMLMyComponentElement extends MyComponent, HTMLElement {
+  interface HTMLSideMenuElement extends SideMenu, HTMLStencilElement {
   }
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLSideMenuElement: {
+    prototype: HTMLSideMenuElement;
+    new (): HTMLSideMenuElement;
   };
   interface HTMLElementTagNameMap {
-    "my-component": HTMLMyComponentElement;
+    "side-menu": HTMLSideMenuElement;
   }
   interface ElementTagNameMap {
-    "my-component": HTMLMyComponentElement;
+    "side-menu": HTMLSideMenuElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "my-component": JSXElements.MyComponentAttributes;
+      "side-menu": JSXElements.SideMenuAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
+    export interface SideMenuAttributes extends HTMLAttributes {
       first?: string;
       last?: string;
     }
   }
 }
 
+declare global { namespace JSX { interface StencilJSX {} } }
